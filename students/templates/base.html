@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>StudentHub</title>
+<link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+</head>
+
+<body>
+
+<header>
+<h1>StudentHub</h1>
+
+<nav style="font-size:20px;">
+<a href="/">Home</a> |
+<a href="/add/">Add Student</a> |
+<a href="/login/">Complete detail</a> | 
+<a href="/studentslist/">Student List</a>
+
+</nav>
+
+</header>
+<main align="center">
+{% block content %}
+{% endblock %}
+</main>
+
+
+<footer>
+<p>&copy; 2026 StudentHub. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

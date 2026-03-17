@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<di class="login-container">
+
+<h2>Complete Profile Login</h2>
+
+<p class="info"><i>
+“You can fill the details only if you have an account.”</i>
+</p><br>
+
+<form method="POST">
+{% csrf_token %}
+<label for="username">Username :</label>
+<input type="text" name="username" placeholder="Enter Username" required style="width: 25%; height:30px; margin-left: 140px;" ><br><br>
+
+<label for="password">Password :</label>
+<input type="password" name="password" placeholder="Enter Password" required style="width: 25%; height:30px; margin-left: 150px;" ><br><br>
+
+<label for="confirm_password">Confirm Password :</label>
+<input type="password" name="confirm_password" placeholder="Confirm Password" required style="width: 25%; height:30px; margin-left: 35px;" ><br><br>
+
+<button type="submit">Login</button>
+    
+</form>
+
+</div>
+
+{% endblock %}

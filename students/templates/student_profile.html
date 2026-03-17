@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 style="text-align:center;">Complete Student Profile</h2>
+ {% if messages %}
+    {% for message in messages %}
+        <div class="message">{{ message }}</div>
+    {% endfor %}
+ {% endif %}
+
+<form method="POST" style="width:50%; margin:auto;">
+{% csrf_token %}
+
+<label>Username :</label><br>
+<input type="text" name="username" value="{{ student.username }}" readonly style="width:100%; height:35px;"><br><br>
+
+<label>Email :</label><br>
+<input type="email" name="email" value="{{ student.email }}" readonly style="width:100%; height:35px;"><br><br>
+
+<label>First Name :</label><br>
+<input type="text" name="first_name" placeholder="First Name" required style="width:100%; height:35px;"><br><br>
+
+<label>Middle Name :</label><br>
+<input type="text" name="middle_name" placeholder="Middle Name" style="width:100%; height:35px;"><br><br>
+
+<label>Last Name :</label><br>
+<input type="text" name="last_name" placeholder="Last Name" required style="width:100%; height:35px;"><br><br>
+
+<label>Father Name :</label><br>
+<input type="text" name="father_name" placeholder="Father Name" required style="width:100%; height:35px;"><br><br>
+
+<label>Mother Name :</label><br>
+<input type="text" name="mother_name" placeholder="Mother Name" required style="width:100%; height:35px;"><br><br>
+
+<label>Student ID :</label><br>
+<input type="text" name="student_id" placeholder="Student ID" required style="width:100%; height:35px;"><br><br>
+
+<label>Mobile Number :</label><br>
+<input type="text" name="mobile_No" placeholder="Mobile Number" required style="width:100%; height:35px;"><br><br>
+
+<label>Address :</label><br>
+<textarea name="address" placeholder="Address" style="width:100%; height:60px;"></textarea><br><br>
+
+<label>Country :</label><br>
+<input type="text" name="country" placeholder="Country" required style="width:100%; height:35px;"><br><br>
+
+<label>State :</label><br>
+<select name="state" required style="width:100%; height:35px;">
+<option value="">Select State</option>
+<option>Andhra Pradesh</option>
+<option>Arunachal Pradesh</option>
+<option>Assam</option>
+<option>Bihar</option>
+<option>Chhattisgarh</option>
+<option>Goa</option>
+<option>Gujarat</option>
+<option>Haryana</option>
+<option>Himachal Pradesh</option>
+<option>Jharkhand</option>
+<option>Karnataka</option>
+<option>Kerala</option>
+<option>Madhya Pradesh</option>
+<option>Maharashtra</option>
+<option>Manipur</option>
+<option>Meghalaya</option>
+<option>Mizoram</option>
+<option>Nagaland</option>
+<option>Odisha</option>
+<option>Punjab</option>
+<option>Rajasthan</option>
+<option>Sikkim</option>
+<option>Tamil Nadu</option>
+<option>Telangana</option>
+<option>Tripura</option>
+<option>Uttar Pradesh</option>
+<option>Uttarakhand</option>
+<option>West Bengal</option>
+</select>
+
+<br><br>
+
+<button type="submit" style="width:100%; height:40px; background:#007bff; color:white; border:none; font-size:16px;">
+Save Profile
+</button>
+
+</form>
+<br><br>
+
+{% endblock %}

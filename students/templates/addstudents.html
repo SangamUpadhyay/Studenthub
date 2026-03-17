@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="center-container">
+        <h1 style="color: rgb(102, 5, 5);">Add Student</h1>
+        <h3>Fill the form below to add a new student</h3>
+
+        <!-- Form to submit student data -->
+         {% if messages %}
+         {% for message in messages %}
+        <div class="message">{{ message }}</div>
+        {% endfor %}
+        {% endif %}
+        <form method="POST" action="">
+            {% csrf_token %}  <!-- CSRF token required for Django POST -->
+            
+            <!-- Username field -->
+            <label for="username">Username:</label>
+            <input type="text" name="username" placeholder="Enter username" style="height: 30px; margin-left: 120px;"><br><br>
+            
+        
+            <label for="email">Email:</label>
+            <input type="email" name="email" placeholder="Enter email" style="height: 30px; margin-left: 180px;"><br><br>
+
+            <!-- Password field -->
+            <label for="password">Password:</label>
+            <input type="password" name="password" placeholder="Enter password" style="height: 30px; margin-left: 120px;"><br><br>
+            
+            <!-- Confirm password field -->
+            <label for="confirm_password">Confirm Password:</label>
+            <input type="password" name="confirm_password" placeholder="Confirm password" style="height: 30px; margin-left: 10px;"><br><br>
+
+            <!-- Submit button -->
+
+            <button type="submit">Submit</button>
+
+        </form>
+
+        <!-- Optional link to go back to home page -->
+        <p><a href="/">Back to Home</a></p>
+    </div>    
+{% endblock %}
+
